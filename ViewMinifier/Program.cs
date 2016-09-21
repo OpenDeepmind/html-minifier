@@ -6,8 +6,7 @@ namespace HtmlMinifier
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text.RegularExpressions;
-
+    
     /// <summary>
     /// The html minification class.
     /// </summary>

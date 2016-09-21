@@ -1,6 +1,4 @@
-﻿using System.Runtime.Remoting;
-
-namespace HtmlMinifier.Tests
+﻿namespace HtmlMinifier.Tests
 {
     using System;
     using System.IO;

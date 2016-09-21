@@ -1,4 +1,6 @@
-﻿namespace HtmlMinifier
+﻿using System.Text;
+
+namespace HtmlMinifier
 {
     using System;
     using System.Collections.Generic;
@@ -36,7 +38,7 @@
                         string minifiedContents = MinifyHtml(filePath, features);
 
                         // Write to the same file
-                        File.WriteAllText(filePath, minifiedContents);
+                        File.WriteAllText(filePath, minifiedContents, Encoding.UTF8);
                         Console.WriteLine("Minified file : " + filePath);
                     }
                 }

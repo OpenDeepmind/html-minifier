@@ -56,5 +56,9 @@
         public static string GithubIssue23 = "<!--ko if: someExpressionGoesHere -->\r\n<li> I want to make this item present/absent dynamically</li>\r\n<!-- /ko -->";
 
         public static string GithubIssue23Result = "<!--ko if: someExpressionGoesHere --><li> I want to make this item present/absent dynamically</li><!-- /ko -->";
+
+        public static string OnlyDeclaration = "\r\n\r\n@model DeclarationTest \r\n\r\n\r\n";
+
+        public static string OnlyDeclarationResult = "@model DeclarationTest\r\n";
     }
 }

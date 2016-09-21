@@ -1,4 +1,6 @@
-﻿namespace HtmlMinifier.Tests
+﻿using System.Runtime.Remoting;
+
+namespace HtmlMinifier.Tests
 {
     using System;
     using System.IO;
@@ -186,6 +188,19 @@
 
             // Act
             string minifiedHtml = StreamReaderExtension.MinifyHtmlCode(DataHelpers.GithubIssue23, new Features(args.ToArray()));
+
+            // Assert
+            Assert.That(minifiedHtml, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void ReadHtRazor_WithOnlyDeclaration_ShouldReturnCorrectly()
+        {
+            // Arrange
+            string expectedResult = DataHelpers.OnlyDeclarationResult;
+
+            // Act
+            string minifiedHtml = StreamReaderExtension.MinifyHtmlCode(DataHelpers.OnlyDeclaration, noFeatures);
 
             // Assert
             Assert.That(minifiedHtml, Is.EqualTo(expectedResult));

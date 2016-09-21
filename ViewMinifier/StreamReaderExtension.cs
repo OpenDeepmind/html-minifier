@@ -101,7 +101,7 @@ namespace HtmlMinifier
                     string substring = fileContents.Substring(declarationPosition, position);
 
                     // Check if it contains a whitespace at the end
-                    if (substring.EndsWith(" ") || substring.EndsWith(">"))
+                    if (substring.EndsWith(" ") || substring.EndsWith(">") || position == fileContents.Length)
                     {
                         if (bringToTop)
                         {

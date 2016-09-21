@@ -73,6 +73,7 @@
     <Content Include="Data\ModelListResult.txt" />
     <Content Include="Data\ModelList.txt" />
     <Content Include="Data\65K.txt" />
+    <Content Include="Data\OnlyDeclaration.txt" />
     <Content Include="Data\StandardResult.txt" />
     <Content Include="Data\Standard.txt" />
   </ItemGroup>

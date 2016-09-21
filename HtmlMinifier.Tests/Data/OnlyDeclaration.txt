@@ -1,3 +1,5 @@
-﻿@using SomeOtherClass
+﻿
 
-@Model Test
+@Model DeclarationTest 
+
+

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace HtmlMinifier
 {
@@ -55,5 +56,8 @@ namespace HtmlMinifier
         /// Property for the max character count
         /// </summary>
         public int MaxLength { get; private set; }
+
+
+        public List<string> ExcludedPaths { get; set; }
     }
 }

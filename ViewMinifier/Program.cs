@@ -17,10 +17,10 @@ namespace HtmlMinifier
         {
             string folderPath = GetFolderpath(args);
 
-            IEnumerable<string> allDirectories = GetDirectories(folderPath, features.ExcludedPaths);
-
             // Determine which features to enable or disable
             var features = new Features(args);
+            IEnumerable<string> allDirectories = GetDirectories(folderPath, features.ExcludedPaths);
+            
 
             // Loop through the files in the folder and look for any of the following extensions
             foreach (string folder in allDirectories)

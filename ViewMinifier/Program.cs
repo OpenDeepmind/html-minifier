@@ -17,7 +17,7 @@ namespace HtmlMinifier
         {
             string folderPath = GetFolderpath(args);
 
-            IEnumerable<string> allDirectories = GetDirectories(folderPath);
+            IEnumerable<string> allDirectories = GetDirectories(folderPath, features.ExcludedPaths);
 
             // Determine which features to enable or disable
             var features = new Features(args);
@@ -46,19 +46,27 @@ namespace HtmlMinifier
             Console.WriteLine("Minification Complete");
         }
 
-        /// <summary>
+         /// <summary>
         /// Gets the directories and subdirectories for a given path.
         /// </summary>
         /// <param name="path">The path</param>
+        /// <param name="excludedPaths">List containing paths to exclude</param>
         /// <returns>A list of the directories.</returns>
-        public static IEnumerable<string> GetDirectories(string path)
+        public static IEnumerable<string> GetDirectories(string path, List<string> excludedPaths)
         {
+            if(excludedPaths.Count > 0)
+            {
+                Console.WriteLine("Excluding paths: ");
+                excludedPaths.ForEach(Console.WriteLine);
+                Console.WriteLine("---");
+            }
             // Get all subdirectories
             IEnumerable<string> directories = from subdirectory in Directory.GetDirectories(path, "*", SearchOption.AllDirectories) select subdirectory;
 
             // Add the subdirectories
-            IList<string> allDirectories = directories as IList<string> ?? directories.ToList();
-
+            List<string> allDirectories = directories as List<string> ?? directories.Where(x => !excludedPaths.Any(y => x.ToLower().StartsWith(y))).ToList();
+            allDirectories.ForEach(Console.WriteLine);
+            
             // Add the root folder
             allDirectories.Add(path);
 

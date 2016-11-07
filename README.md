@@ -38,6 +38,10 @@ You can also disable the minification of JavaScript Comments
 
     C:\>HtmlMinifier.exe "C:\Folder" ignorejscomments
 
+You can also select folders to exclude from minification
+
+    C:\>HtmlMinifier.exe "C:\Folder" -"C:\Folder\specialViews" -"C:\Folder\subfolder\Views"
+
 If you'd like to find out how to use this with MSBUILD and your next publish, please follow this [link.](http://deanhume.com/Home/BlogPost/a-simple-html-minifier-for-asp-net/2097)
 
 ## Maintainers

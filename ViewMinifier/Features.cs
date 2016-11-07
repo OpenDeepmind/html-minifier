@@ -30,6 +30,15 @@ namespace HtmlMinifier
             }
 
             MaxLength = maxLength;
+
+            ExcludedPaths = new List<string>();
+            foreach(var item in args)
+            {
+                if (item.StartsWith("-"))
+                {
+                    ExcludedPaths.Add(item.Substring(1).ToLower());
+                }
+            }
         }
 
         /// <summary>
